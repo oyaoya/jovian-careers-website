@@ -2,47 +2,34 @@
 <html lang="en">
   <head>
     <title>Jovian Careers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-      h1 {
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(100, 100, 100);
-        text-align: center;
-      }
       #banner {
-        width: 100%;
         height: 360px;
+        width: 100%;
         object-fit: cover;
-      }
-      h2 {
-        font-family: Roboto;
-        font-size: 32px;
-        color: rgb(100, 100, 100);
-        text-align: center;
-        font-weight: normal;
-      }
-      .bodytex {
-        font-family: Roboto;
-        color: rgb(80, 80, 80);
-      }
-      #container {
-        max-width: 720px;
-        margin: 0 auto;
+        margin-bottom: 16px;
       }
     </style>
   </head>
+  </head>
   <body>
-    <div id="container">
-    <h1>Jovian Careers</h1>
-    <img src="/static/jovianbanner.jpg" alt="Jovian Careers banner" id="banner">
-    <h2>About Jovian</h2>
-    <p class="bodytext">Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.</p>
-    <h2>Open Positions</h2>
-    <p>TODO - Show the jobs here</p>
-      <div style="text-align:center;">
-    <button>Contact Us</button>
-        <p>Copyright 2023, Jovian</p>
+    <div class="container">
+    <h1 class="text-center mt-4">Jovian Careers</h1>
+    <img src="/static/jovianbanner.jpg" alt="Jovian Careers banner" id="banner" class="img-fluid">
+    <h2 class="text-center mt-2 mb-4">About Jovian</h2>
+    <p class="lead">Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.</p>
+    <h2 class="text-center">Open Positions</h2>
+    <p>
+      {% for job in jobs %}
+        {% include 'jobitem.html' %}
+      {% endfor %}  
+    </p>
+      <div class="text-center">
+    <button class="btn btn-primary btn-lg">Contact Us</button>
+        <p class="mt-4">Copyright 2023, Jovian</p>
       </div>
     </div>
   </body>
