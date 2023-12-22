@@ -16,11 +16,18 @@
   </head>
   </head>
   <body>
-    <div class="container">
-    <h1 class="text-center mt-4">Jovian Careers</h1>
+    {% include 'nav.html' %}
     <img src="/static/jovianbanner.jpg" alt="Jovian Careers banner" id="banner" class="img-fluid">
-    <h2 class="text-center mt-2 mb-4">About Jovian</h2>
+<div class="container">
+    <h1 class="text-center mt-4">Jovian Careers</h1>
+    <div class="row" style="margin-bottom:16px">
+      <div class="col-md-6">
     <p class="lead">Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s'est intéressé à un des mots latins les plus obscurs, consectetur, extrait d'un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l'éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.</p>
+      </div>
+      <div class="d-none d-md-block col-md-6">
+      <img src="/static/poeple.jpg" alt="Jovian Careers poeple" id="" style="height:320px; border-radius:4px;">
+      </div>
+    </div>
     <h2 class="text-center">Open Positions</h2>
     <p>
       {% for job in jobs %}
@@ -28,9 +35,11 @@
       {% endfor %}  
     </p>
       <div class="text-center">
-    <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2023, Jovian</p>
+    <a href=" mailto:hello@jovian.ai?subject=Question%20about%20Job%20Openings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20question%3A%20%3Center%20question%20here%3E%0D%0A " class="btn btn-primary btn-lg">Contact Us</a>
+        
       </div>
     </div>
+    {% include 'footer.html' %}
+
   </body>
 </html>
